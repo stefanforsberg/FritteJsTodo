@@ -1,0 +1,18 @@
+{
+  "name": "Todo",
+  "version": "0.0.0",
+  "description": "My todo list",
+  "main": "server.js",
+  "dependencies": {
+    "express": "~3.2.5",
+    "socket.io": ""
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": "",
+  "author": "Stefan Forsberg",
+  "license": "BSD"
+}

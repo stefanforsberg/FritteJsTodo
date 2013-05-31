@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+	<body>
+		<div>Hello</div>
+
+		<ul data-bind="foreach: todoItems">
+			<li><span data-bind="text: name"></span></li>
+		</ul>
+
+		<form data-bind="submit: addTask">
+		    Add task: <input data-bind="value: newTaskText" placeholder="Task description?" />
+		    <button type="submit">Add</button>
+		</form>
+
+		<script src="/socket.io/socket.io.js"></script>
+		<script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/knockout/2.2.0/knockout-min.js'></script>
+		<script type="text/javascript">
+		
+			var Todo = Todo || {};
+
+			function TodoItem(name) {
+			    var that = this;
+			    that.name = name;
+			}
+
+			function TodoViewModel() {
+			    var that = this;
+
+			    that.todoItems = ko.observableArray([]);
+		    	that.newTaskText = ko.observable();
+			    that.init = function(initialItems) {
+		    		that.setTask(initialItems);
+			    };
+
+			    that.setTask = function(tasks) {
+		    		var items = [];
+
+		    		for(var i = 0; i < tasks.length; i++) {
+	    				items.push(new TodoItem(tasks[i]))
+		    		}
+		    		console.log("Setting tasks");
+		    		that.todoItems(items);
+			    }
+
+			    that.addTask = function() {
+			        Todo.addTask(this.newTaskText());
+			        that.newTaskText("");
+			    };
+
+			}
+
+			Todo = {
+				socket: {},
+				viewModel: {},
+
+				init: function(socket) {
+					this.socket = socket;
+					socket.on('connected', function (data) {
+						this.items = data.items;
+						viewModel = new TodoViewModel();
+						viewModel.init(this.items);
+						ko.applyBindings(viewModel);
+					});
+
+					socket.on('tasks', function (data) {
+						viewModel.setTask(data.items);
+					});
+				},
+
+				addTask: function(taskText) {
+					this.socket.emit('addTask', { name: taskText });
+				}
+			}
+
+			Todo.init(io.connect());
+
+			//socket = io.connect();
+
+			//socket.on('connected', function (data) {
+			//	Todo.items = data.items;
+			//});
+
+
+		</script>
+	</body>
+</html>
