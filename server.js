@@ -1,13 +1,23 @@
-var io = require('socket.io');
-var http = require('http');
-var express = require('express');
+var io = require('socket.io'),
+    http = require('http'),
+    express = require('express'),
+    lessMiddleware = require('less-middleware');
 
 var port = process.env.port || 8090;
 
 var app = express();
 var server = http.createServer(app);
 
-app.use(express.static(__dirname + "/public"));
+// app.use(express.static(__dirname + "/public"));
+
+app.configure(function(){
+  
+  app.use(lessMiddleware( {
+    src      : __dirname + "/public",
+    compress : true
+  }));
+  app.use(express.static(__dirname + '/public'));
+});
 
 io = io.listen(server);
 
