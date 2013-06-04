@@ -17,8 +17,8 @@ Todo.app = {
 			viewModel.taskAdded(data.task);
 		});
 
-		socket.on('toggledComplete', function(data) {
-			viewModel.toggledComplete(data.id);
+		socket.on('taskCompleteStatusChanged', function(data) {
+			viewModel.taskCompleteStatusChanged(data.id, data.completed);
 		});
 	},
 

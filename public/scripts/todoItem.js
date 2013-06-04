@@ -3,9 +3,5 @@ TodoItem = function TodoItem(id, taskText, completed) {
     that.id = id;
     that.text = taskText;
     that.completed = ko.observable(completed);
-
-    that.toggleCompleted = function() {
-    	that.completed(!that.completed());
-    };
 }
 

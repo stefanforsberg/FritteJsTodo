@@ -8,8 +8,6 @@ var port = process.env.port || 8090;
 var app = express();
 var server = http.createServer(app);
 
-// app.use(express.static(__dirname + "/public"));
-
 app.configure(function(){
   
   app.use(lessMiddleware( {

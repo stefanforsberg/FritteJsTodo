@@ -25,7 +25,7 @@ Todo.ViewModel = function () {
 		return "rainbow rainbow" + i;
 	};
 
-	that.toggleDone = function(data, event) {
+	that.toggleComplete = function(data, event) {
 		Todo.app.toggleComplete(data.id);
 	};
 
@@ -38,13 +38,15 @@ Todo.ViewModel = function () {
 		that.todoItems.push(that.mapTask(task));
     };
 
-    that.toggledComplete = function(id) {
-		for (i=0;i<that.todoItems().length;i++){
-       		if (that.todoItems()[i]().id === id ) that.todoItems()[i]().toggleCompleted();
-    	}
+    that.taskCompleteStatusChanged = function(id, completed) {
+        var task = ko.utils.arrayFirst(that.todoItems(), function(task) {
+            return task.id === id;
+        });
+
+        task.completed(completed);
     };
 
     that.mapTask = function(task) {
-    	return ko.observable(new TodoItem(task.id, task.text, task.completed));
+        return new TodoItem(task.id, task.text, task.completed);
     };
 }
