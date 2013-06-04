@@ -1,8 +1,8 @@
-body{font-family:'Open Sans',sans-serif;}
+body{font-family:'Open Sans',sans-serif;background:url('../img/greyfloral.png');margin:35px 0px 0px 45px;}
 ul,li{margin:0;padding:0;list-style:none;}
 .completed{text-decoration:line-through;}
-#tasks .task{float:left;width:250px;clear:both;}#tasks .task span{float:left;}
-h1{font-family:'Montserrat Alternates',sans-serif;font-size:4em;color:#ff7f00;}
+#tasks .task{float:left;margin-bottom:3px;clear:both;}#tasks .task span{float:left;}
+h1{font-family:'Montserrat Alternates',sans-serif;font-size:4em;color:#ff0000;text-shadow:1px 1px #cc0000;}
 li div .rainbow{width:25px;height:100%;margin-right:7px;float:left;}
 li div .rainbow0{background-color:#ff0000;}
 li div .rainbow1{background-color:#ff7f00;}
