@@ -1,14 +1,14 @@
-body{font-family:'Open Sans',sans-serif;background:url('../img/greyfloral.png');margin:35px 0px 0px 45px;}
-ul,li{margin:0;padding:0;list-style:none;}
-.completed{text-decoration:line-through;}
-#tasks .task{float:left;margin-bottom:3px;clear:both;}#tasks .task span{float:left;}
-h1{font-family:'Montserrat Alternates',sans-serif;font-size:4em;color:#ff0000;text-shadow:1px 1px #cc0000;}
-li div .rainbow{width:25px;height:100%;margin-right:7px;float:left;}
-li div .rainbow0{background-color:#ff0000;}
-li div .rainbow1{background-color:#ff7f00;}
-li div .rainbow2{background-color:#ffff00;}
-li div .rainbow3{background-color:#00ff00;}
-li div .rainbow4{background-color:#0000ff;}
-li div .rainbow5{background-color:#4b0082;}
-li div .rainbow6{background-color:#8f00ff;}
-input[type=text],button{font-family:'Open Sans',sans-serif;font-color:#565656;font-size:1.5em;border:5px solid white;-webkit-box-shadow:inset 0 0 8px rgba(0, 0, 0, 0.1),0 0 16px rgba(0, 0, 0, 0.1);-moz-box-shadow:inset 0 0 8px rgba(0, 0, 0, 0.1),0 0 16px rgba(0, 0, 0, 0.1);box-shadow:inset 0 0 8px rgba(0, 0, 0, 0.1),0 0 16px rgba(0, 0, 0, 0.1);padding:15px;background:rgba(255, 255, 255, 0.5);margin:0 0 10px 0;}
+body{font-family:'Open Sans',sans-serif;background:url('../img/greyfloral.png');margin:35px 0px 0px 45px}
+ul,li{margin:0;padding:0;list-style:none}
+.completed{text-decoration:line-through}
+#tasks .task{float:left;margin-bottom:3px;clear:both}#tasks .task span{float:left}
+h1{font-family:'Montserrat Alternates',sans-serif;font-size:4em;color:#f00;text-shadow:1px 1px #c00}
+li div .rainbow{width:25px;height:100%;margin-right:7px;float:left}
+li div .rainbow0{background-color:#f00}
+li div .rainbow1{background-color:#ff7f00}
+li div .rainbow2{background-color:#ff0}
+li div .rainbow3{background-color:#0f0}
+li div .rainbow4{background-color:#00f}
+li div .rainbow5{background-color:#4b0082}
+li div .rainbow6{background-color:#8f00ff}
+input[type=text],button{font-family:'Open Sans',sans-serif;color:#ff7f00;font-size:1.3em;border:3px solid white;-webkit-box-shadow:inset 0 0 8px rgba(0,0,0,0.1),0 0 16px rgba(0,0,0,0.1);-moz-box-shadow:inset 0 0 8px rgba(0,0,0,0.1),0 0 16px rgba(0,0,0,0.1);box-shadow:inset 0 0 8px rgba(0,0,0,0.1),0 0 16px rgba(0,0,0,0.1);padding:15px;background:rgba(255,255,255,0.4);margin:0 0 15px 0}
