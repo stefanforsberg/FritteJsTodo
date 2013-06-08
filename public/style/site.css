@@ -1,14 +1,23 @@
 body{font-family:'Open Sans',sans-serif;background:url('../img/greyfloral.png');margin:35px 0px 0px 45px}
 ul,li{margin:0;padding:0;list-style:none}
+a{color:#000000;text-decoration:none}
 .completed{text-decoration:line-through}
-#tasks .task{float:left;margin-bottom:3px;clear:both}#tasks .task span{float:left}
+.btn{-moz-border-bottom-colors:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;background-color:#F5F5F5;background-image:linear-gradient(to bottom, #fff, #e6e6e6);background-repeat:repeat-x;border-color:#c2c2c2 #c2c2c2 #b2b2b2;border-image:none;border-radius:4px 4px 4px 4px;border-style:solid;border-width:1px;box-shadow:0 1px 0 rgba(255,255,255,0.2) inset,0 1px 2px rgba(0,0,0,0.05);color:#333333;cursor:pointer;display:inline-block;margin:0;padding:0px 6px;text-align:center;text-shadow:0 1px 1px rgba(255,255,255,0.75)}
+#tasks .task{float:left;margin-bottom:5px;clear:both;width:350px}#tasks .task span{float:left}
+#tasks li .rainbow{width:25px;height:100%;margin-right:7px;float:left}
+#tasks li .rainbow0 a{color:#f00}
+#tasks li .rainbow0 .rainbow{background-color:#f00}
+#tasks li .rainbow1 a{color:#ff7f00}
+#tasks li .rainbow1 .rainbow{background-color:#ff7f00}
+#tasks li .rainbow2 a{color:#ff0}
+#tasks li .rainbow2 .rainbow{background-color:#ff0}
+#tasks li .rainbow3 a{color:#0f0}
+#tasks li .rainbow3 .rainbow{background-color:#0f0}
+#tasks li .rainbow4 a{color:#00f}
+#tasks li .rainbow4 .rainbow{background-color:#00f}
+#tasks li .rainbow5 a{color:#4b0082}
+#tasks li .rainbow5 .rainbow{background-color:#4b0082}
+#tasks li .rainbow6 a{color:#8f00ff}
+#tasks li .rainbow6 .rainbow{background-color:#8f00ff}
 h1{font-family:'Montserrat Alternates',sans-serif;font-size:4em;color:#f00;text-shadow:1px 1px #c00}
-li div .rainbow{width:25px;height:100%;margin-right:7px;float:left}
-li div .rainbow0{background-color:#f00}
-li div .rainbow1{background-color:#ff7f00}
-li div .rainbow2{background-color:#ff0}
-li div .rainbow3{background-color:#0f0}
-li div .rainbow4{background-color:#00f}
-li div .rainbow5{background-color:#4b0082}
-li div .rainbow6{background-color:#8f00ff}
 input[type=text],button{font-family:'Open Sans',sans-serif;color:#ff7f00;font-size:1.3em;border:3px solid white;-webkit-box-shadow:inset 0 0 8px rgba(0,0,0,0.1),0 0 16px rgba(0,0,0,0.1);-moz-box-shadow:inset 0 0 8px rgba(0,0,0,0.1),0 0 16px rgba(0,0,0,0.1);box-shadow:inset 0 0 8px rgba(0,0,0,0.1),0 0 16px rgba(0,0,0,0.1);padding:15px;background:rgba(255,255,255,0.4);margin:0 0 15px 0}

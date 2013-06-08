@@ -3,6 +3,7 @@
 
 	<head>
 		<link rel="stylesheet" type="text/css" href="/style/site.css">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
 	</head>
 
 	<body>
@@ -21,9 +22,14 @@
 
 		<ul id="tasks" data-bind="foreach: todoItems">
 			<li>
-				<div class="task">
-					<div class="rainbow" data-bind="attr: {'class': $root.backgroundColor($index)}" >&nbsp;</div>
+				<div data-bind="attr: {'class': $root.backgroundColor($index)}">
+					<div class="rainbow color-box">&nbsp;</div>
 					<div style="float: left;" data-bind="text: text, click: $root.toggleComplete, css: {'completed': completed}"></div>
+
+					<div style="float: right">
+						<a class="btn" href="#"><i class="icon-chevron-sign-up"></i></a>
+						<a class="btn" href="#"><i class="icon-chevron-sign-down"></i></a>
+					</div>
 				</div>
 			</li>
 		</ul>

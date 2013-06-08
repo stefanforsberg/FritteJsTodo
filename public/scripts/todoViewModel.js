@@ -22,7 +22,7 @@ Todo.ViewModel = function () {
 			i-=7;
 		}
 
-		return "rainbow rainbow" + i;
+		return "task rainbow" + i;
 	};
 
 	that.toggleComplete = function(data, event) {
