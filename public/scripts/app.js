@@ -14,7 +14,7 @@ Todo.app = {
 		});
 
 		socket.on('taskAdded', function(data) {
-			viewModel.taskAdded(data.task);
+			viewModel.taskAdded(data.task, data.color);
 		});
 
 		socket.on('taskCompleteStatusChanged', function(data) {
@@ -27,8 +27,8 @@ Todo.app = {
 		
 	},
 
-	addTask: function(taskText) {
-		this.socket.emit('addTask', { name: taskText });
+	addTask: function(taskText, color) {
+		this.socket.emit('addTask', { name: taskText, color: color });
 	},
 
 	toggleComplete: function(id) {

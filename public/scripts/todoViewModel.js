@@ -4,6 +4,8 @@ Todo.ViewModel = function () {
     var that = this;
 
     that.todoItems = ko.observableArray([]);
+    that.colors = ko.observableArray([0,1,2,3,4,5,6]);
+    that.selectedColor = ko.observable(0);
 	that.newTaskText = ko.observable();
 
     that.init = function(initalTasks) {
@@ -15,15 +17,13 @@ Todo.ViewModel = function () {
 		that.todoItems(mapped);
     };
 
-	that.backgroundColor = function(index) {
-		var i = index();
-
-		while(i >= 7) {
-			i-=7;
-		}
-
-		return "task rainbow" + i;
+	that.backgroundColor = function(data, event) {
+		return "task rainbow" + data.color;
 	};
+
+    that.selectColor = function(data, event) {
+        that.selectedColor(data);
+    }
 
 	that.toggleComplete = function(data, event) {
 		Todo.app.toggleComplete(data.id);
@@ -42,7 +42,7 @@ Todo.ViewModel = function () {
 
         if(taskToAdd.length === 0) return;
 
-        Todo.app.addTask(this.newTaskText());
+        Todo.app.addTask(this.newTaskText(), this.selectedColor());
         that.newTaskText("");
     };
 
@@ -67,6 +67,6 @@ Todo.ViewModel = function () {
     }
 
     that.mapTask = function(task) {
-        return new TodoItem(task.id, task.text, task.completed);
+        return new TodoItem(task.id, task.text, task.color, task.completed);
     };
 }

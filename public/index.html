@@ -15,6 +15,11 @@
 
 			<form data-bind="submit: addTask">
 			    <input type="text" data-bind="value: newTaskText" placeholder="New task?" />
+
+			    <div style="display: inline;" data-bind="foreach: colors">
+			    	<div style="display: inline-block; height: 25px; width: 25px;" data-bind="click: $root.selectColor, attr: {'class': ('color-picker'+$index()) }, css: {selected: $data === $root.selectedColor()}">&nbsp;</div>
+		    	</div>
+
 			    <button type="submit">Add</button>
 			</form>
 
@@ -22,7 +27,7 @@
 
 		<ul id="tasks" data-bind="foreach: todoItems">
 			<li>
-				<div data-bind="attr: {'class': $root.backgroundColor($index)}">
+				<div data-bind="attr: {'class': $root.backgroundColor($data)}">
 					<div class="rainbow color-box">&nbsp;</div>
 					<div style="float: left;" data-bind="text: text, click: $root.toggleComplete, css: {'completed': completed}"></div>
 

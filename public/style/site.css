@@ -2,6 +2,14 @@ body{font-family:'Open Sans',sans-serif;background:url('../img/greyfloral.png');
 ul,li{margin:0;padding:0;list-style:none;}
 a{color:#000000;text-decoration:none;}
 .completed{text-decoration:line-through;}
+.color-picker0{background-color:#ff0000;}
+.color-picker1{background-color:#ff7f00;}
+.color-picker2{background-color:#ffff00;}
+.color-picker3{background-color:#00ff00;}
+.color-picker4{background-color:#0000ff;}
+.color-picker5{background-color:#4b0082;}
+.color-picker6{background-color:#8f00ff;}
+.selected{border:solid 1px #989898;}
 .btn{-moz-border-bottom-colors:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;background-color:#F5F5F5;background-image:linear-gradient(to bottom, #ffffff, #e6e6e6);background-repeat:repeat-x;border-color:#c2c2c2 #c2c2c2 #b2b2b2;border-image:none;border-radius:4px 4px 4px 4px;border-style:solid;border-width:1px;box-shadow:0 1px 0 rgba(255, 255, 255, 0.2) inset,0 1px 2px rgba(0, 0, 0, 0.05);color:#333333;cursor:pointer;display:inline-block;margin:0;padding:0px 6px;text-align:center;text-shadow:0 1px 1px rgba(255, 255, 255, 0.75);}
 #tasks .task{float:left;margin-bottom:5px;clear:both;width:350px;}#tasks .task span{float:left;}
 #tasks li .rainbow{width:25px;height:100%;margin-right:7px;float:left;}
