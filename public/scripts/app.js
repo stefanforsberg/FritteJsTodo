@@ -20,6 +20,11 @@ Todo.app = {
 		socket.on('taskCompleteStatusChanged', function(data) {
 			viewModel.taskCompleteStatusChanged(data.id, data.completed);
 		});
+
+		socket.on('taskSortChanged', function(data) {
+			viewModel.taskSortChanged(data.items);
+		});
+		
 	},
 
 	addTask: function(taskText) {
@@ -28,5 +33,13 @@ Todo.app = {
 
 	toggleComplete: function(id) {
 		this.socket.emit('toggleComplete', { id: id });
+	},
+
+	prioDown: function(id) {
+		this.socket.emit('prioDown', { id: id });
+	},
+
+	prioUp: function(id) {
+		this.socket.emit('prioUp', { id: id });
 	}
 }

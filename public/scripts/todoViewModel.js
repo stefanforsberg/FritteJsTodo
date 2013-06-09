@@ -29,7 +29,19 @@ Todo.ViewModel = function () {
 		Todo.app.toggleComplete(data.id);
 	};
 
+    that.prioDown = function(data, event) {
+        Todo.app.prioDown(data.id);
+    }
+
+    that.prioUp = function(data, event) {
+        Todo.app.prioUp(data.id);
+    }
+
     that.addTask = function() {
+        var taskToAdd = this.newTaskText();
+
+        if(taskToAdd.length === 0) return;
+
         Todo.app.addTask(this.newTaskText());
         that.newTaskText("");
     };
@@ -45,6 +57,14 @@ Todo.ViewModel = function () {
 
         task.completed(completed);
     };
+
+    that.taskSortChanged = function(tasks) {
+        var mapped = ko.utils.arrayMap(tasks, function(task) {
+            return that.mapTask(task);
+        });
+
+        that.todoItems(mapped);
+    }
 
     that.mapTask = function(task) {
         return new TodoItem(task.id, task.text, task.completed);

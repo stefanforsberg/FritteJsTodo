@@ -26,10 +26,14 @@
 					<div class="rainbow color-box">&nbsp;</div>
 					<div style="float: left;" data-bind="text: text, click: $root.toggleComplete, css: {'completed': completed}"></div>
 
-					<div style="float: right">
-						<a class="btn" href="#"><i class="icon-chevron-sign-up"></i></a>
-						<a class="btn" href="#"><i class="icon-chevron-sign-down"></i></a>
+					<div class="prio-button" data-bind="if: ($index() !== 0)">
+						<a class="btn" href="#" data-bind="click: $root.prioUp"><i class="icon-chevron-sign-up"></i></a>
 					</div>
+
+					<div class="prio-button" data-bind="if: ($index() !== ($root.todoItems().length - 1))">
+						<a  class="btn" href="#" data-bind="click: $root.prioDown"><i class="icon-chevron-sign-down"></i></a>
+					</div>
+
 				</div>
 			</li>
 		</ul>
